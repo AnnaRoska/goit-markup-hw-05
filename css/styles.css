@@ -480,6 +480,7 @@ body{
     font: 500 16px / 1.5 "Roboto", sans-serif;
     letter-spacing: 0.02em;
     color: #fff;
+    margin-bottom: 16px;
 }
 .ftr-subscribe-mailbtn{
     display: flex;
@@ -491,36 +492,41 @@ body{
     width: 264px;
     height: 40px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background: transparent;
+    background-color: transparent;
     font: 400 12px / 2 "Roboto", sans-serif;
     letter-spacing: 0.04em;
     color: #fff;
     padding: 8px 16px;
-    margin-top: 16px;
+}
+.ftr-subscribe-inpmail::placeholder{
+    color: #ffffff;
 }
 .ftr-subscribe-btn{
     display: flex;
     align-items: center;
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
-    background: #4d5ae5;
+    background-color: #4D5AE5;
     position: relative;
-    margin-top: 16px;
-}
-.ftr-subscribe-btn-txt{
+    justify-content: center;
+    align-items: center;
     font: 500 16px / 1.5 "Roboto", sans-serif;
     letter-spacing: 0.04em;
-    color: #fff;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+}
+.ftr-subscribe-btn-txt{
+    /* font: 500 16px / 1.5 "Roboto", sans-serif;
+    letter-spacing: 0.04em;
+    color: #fff; */
 }
 .svg-style-mail{
-    position: absolute;
+    margin-left: 16px;
     fill: #fff;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 24px;
-}
+   }
 
 .modal-overlay{
     background-color: rgba(0, 0, 0, 0.5);
