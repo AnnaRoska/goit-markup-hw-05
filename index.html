@@ -381,27 +381,26 @@
         </ul>
       </div>
       <div class="ftr-subscribe">
-        <div>
-          <a class="ftr-subscribe-title" href="">Subscribe</a>
-        </div>
-        <div class="ftr-subscribe-mailbtn">
-          <input type="email" class="ftr-subscribe-inpmail" placeholder="E-mail">
-          <button class="ftr-subscribe-btn">
+        <p class="ftr-subscribe-title" href="">Subscribe</p>
+        <form class="ftr-subscribe-mailbtn">
+          <label for="">
+            <input type="email" name="nm_ftr-subscribe-inpmail" class="ftr-subscribe-inpmail" placeholder="E-mail">
+          </label>
+          <button class="ftr-subscribe-btn" type="submit">
             <span class="ftr-subscribe-btn-txt"> Subscribe
             </span>
             <span>
-              <svg width="24" height="20" class="svg-style-mail">
+              <svg width="24" height="24" class="svg-style-mail">
                 <use href="./images/icons.svg#icon-send"></use>
               </svg>
             </span>
-
           </button>
-        </div>
+        </form>
       </div>
     </div>
   </footer>
-  <!-- <div class="modal-overlay"> -->
-  <div class="modal-overlay is-open">
+  <div class="modal-overlay">
+    <!-- <div class="modal-overlay is-open"> -->
     <div class="modal">
       <button class="popup-btn-close" type="submit">
         <svg width="8" height="8" class="popup-icon-close">
