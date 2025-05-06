@@ -436,14 +436,14 @@ body{
 .part-end{
     background-color: #2E2F42;
     padding: 100px 0;
+    width: 100%;
     }
 .container-ftr{
   display: flex;  
   align-items: baseline;
 }
-.box-end{
+.box-end{ 
     margin-right: 120px;
-
 }
 .logo-end{
     font-family:Raleway, sans-serif;
@@ -529,7 +529,7 @@ body{
    }
 
 .modal-overlay{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(46, 47, 66, 0.4);
     position: fixed;
     left:0;
     top:0;
@@ -541,20 +541,25 @@ body{
     align-items: center;
     opacity: 0;
     pointer-events: none;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-overlay.is-open{
     opacity: 1;
-        pointer-events: auto;
+    pointer-events: auto;
 }
 .modal{
-    position: relative;
+    position: absolute;
     border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: #fcfcfc;
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .popup-btn-close {
@@ -563,15 +568,23 @@ body{
     top: 24px;
     width: 24px;
     height: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content:center;
     background-color: #e7e9fc;
+    padding: 0;
+    cursor: pointer;
     outline: none;
-    border-color: var(--cornflower);
     box-shadow: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
 }
 .popup-btn-close:hover,.popup-btn-close:focus {
-    background-color: rgba(64, 75, 191, 1)
+    background-color: #404bbf;
+    border: none;
 }
 .popup-icon-close{
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -586,16 +599,43 @@ body{
     letter-spacing: 0.02em;
     text-align: center;
     color: #2e2f42;
-    margin-top: 48px;
     margin-bottom: 16px;
 }
-
+.form-div-info{
+    margin-bottom: 8px;
+}
+.popup-label {
+    display: inline-block;
+    font: 400 12px / 1.17 "Roboto", sans-serif;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    display: block;
+}
 .popup-input-wrapper {
     position: relative;
     margin-bottom: 8px;
     display: flex;
     outline: none;
 
+}
+.popup-input {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 360px;
+    height: 40px;
+    padding-left: 38px;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    background-color: transparent;
+    outline: transparent;
+}    
+.popup-input:hover, .popup-input:focus{
+    border-color: #4D5AE5;
 }
 .popup-icon{
     position: absolute;
@@ -606,67 +646,79 @@ body{
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .popup-icon:hover, .popup-icon:focus{
-    fill: var(--iris);
+    fill: #4D5AE5;
 }
-.popup-input {
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 4px;
-    width: 360px;
-    height: 40px;
-    padding-left: 38px;
-    outline: none;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-  .popup-input:hover, .popup-input:focus{
-    border: 1px solid #4d5ae5;
-  }
+  
    .popup-input-wrapper:has(input:hover) .popup-icon,
   .popup-input-wrapper:has(input:focus) .popup-icon {
     fill: var(--iris);
   }
-
+.form-div-comment{
+    margin-bottom: 16px;
+}
  .popup-textarea{
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    width: 360px;
     height: 120px;
     Top: 216px;
     resize: none;
     outline: none;
     margin-bottom: 16px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+
 }
 .popup-textarea:hover, .popup-textarea:focus {
-    border: 1px solid #4d5ae5;
+    border-color: #4d5ae5;
 }
 .form-checkbox-wrapper {
      margin-bottom: 24px;
 }
-.popup-label {
+.popup-label-user-privacy {
     display: inline-block;
-    font: 400 12px / 1.16667 "Roboto", sans-serif;
+    font: 400 12px / 1.17 "Roboto", sans-serif;
     letter-spacing: 0.04em;
     color: #8e8f99;
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 0;
+    margin-bottom: 4px;
+    display: block;
 }
 .popup-input-checkbox {
-    position: absolute;
-    left: -5px;
+    /* position: absolute; */
+    /* left: -5px;
     align-items: center;
-    justify-content: flex-start;
-    display: none; 
+    justify-content: flex-start; */
+    /* display: none; */   
 }
-.form-checkmark {
-    position: relative;
-    height: 18px;
+.popup-input-checkbox:has(input:checked) .popup-span-checkmark {
+    border: none;
+    fill: #F4F4FD;
+
+}
+
+.popup-span-checkmark {
+    /* position: relative; */
+    width: 16;
+    height: 16px;
     border-radius: 2px;
     border-width: 1px;
+    
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
     align-items: center;
-    border: 1px solid white;
+    justify-content: center;
+    fill: transparent;
 }
 .popup-icon-checkbox {
     border-radius: 2px;
@@ -676,12 +728,12 @@ body{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-checkbox-wrapper input:checked ~ .form-checkmark  svg{
+/* .form-checkbox-wrapper input:checked ~ .form-checkmark  svg{
         background-color: #404BBF;
-}
+} */
 
 .accent {
-    color: var(--iris);
+    color: #4d5ae5;
     text-decoration: underline;
 }
 .popup-send {
@@ -690,15 +742,19 @@ body{
     text-align: center;
     color: #fff;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     border-radius: 4px;
     padding: 16px 32px;
-    background: #4d5ae5;
+    background-color: #4D5AE5;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 24px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
     
