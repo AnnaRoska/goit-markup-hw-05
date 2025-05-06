@@ -563,24 +563,20 @@ body{
 }
 
 .popup-btn-close {
-    position:absolute;
+    position: absolute;
     right: 24px;
     top: 24px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
     cursor: pointer;
-    outline: none;
-    box-shadow: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .popup-btn-close:hover,.popup-btn-close:focus {
     background-color: #404bbf;
@@ -657,24 +653,24 @@ body{
 .form-div-comment{
     margin-bottom: 16px;
 }
- .popup-textarea{
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 4px;
-    height: 120px;
-    Top: 216px;
-    resize: none;
+ .popup-textarea{ 
+    /* Top: 216px;
     outline: none;
-    margin-bottom: 16px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 16px; */
+    
     width: 100%;
+    height: 120px;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
     background-color: transparent;
     padding: 8px 16px;
     outline: transparent;
-
+    resize: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .popup-textarea:hover, .popup-textarea:focus {
     border-color: #4d5ae5;
@@ -693,22 +689,26 @@ body{
     margin-bottom: 4px;
     display: block;
 }
-.popup-input-checkbox {
-    /* position: absolute; */
-    /* left: -5px;
+/* .popup-input-checkbox {
+    position: absolute;
+    left: -5px;
     align-items: center;
-    justify-content: flex-start; */
-    /* display: none; */   
-}
-.popup-input-checkbox:has(input:checked) .popup-span-checkmark {
+    justify-content: flex-start;
+} */
+/* .popup-input-checkbox:has(popup-input-checkbox:checked) .popup-span-checkmark {
+    background-color:#404bbf;
     border: none;
     fill: #F4F4FD;
+} */
 
-}
+.form-checkbox-wrapper input:checked +label .popup-span-checkmark{
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
+ }
 
 .popup-span-checkmark {
-    /* position: relative; */
-    width: 16;
+    width: 16px;
     height: 16px;
     border-radius: 2px;
     border-width: 1px;
@@ -722,9 +722,9 @@ body{
 }
 .popup-icon-checkbox {
     border-radius: 2px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    top: 20px ;
-    fill: rgb(255, 255, 255);
+/* border: 1px solid rgba(46, 47, 66, 0.4);
+top: 20px ;
+fill: rgb(255, 255, 255); */
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
